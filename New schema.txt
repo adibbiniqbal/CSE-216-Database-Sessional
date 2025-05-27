@@ -1,0 +1,17 @@
+-- Connect as SYSDBA (run from command line or SQL client)
+sqlplus / as sysdba
+
+-- Switch to the target pluggable database (replace <PDB_NAME>)
+ALTER SESSION SET CONTAINER = ORCLPDB;
+
+-- Create a new user/schema (replace <USERNAME> and <PASSWORD>)
+CREATE USER <USERNAME> IDENTIFIED BY <PASSWORD>;
+
+-- Grant basic connect and resource roles to the new user
+GRANT CONNECT, RESOURCE TO <USERNAME>;
+
+-- Grant all privileges to the user (use with caution)
+GRANT ALL PRIVILEGES TO <USERNAME>;
+
+-- Verify the user exists
+SELECT * FROM dba_users WHERE username = '<USERNAME>';
