@@ -1,4 +1,4 @@
-1.Find employees who are either in departments with more than 5 employees or have a job title with a minimum salary above 10000, or both. Exclude those in departments where the manager earns less than their department's average.
+-- 1.Find employees who are either in departments with more than 5 employees or have a job title with a minimum salary above 10000, or both. Exclude those in departments where the manager earns less than their department's average.
 	
 	WITH
     LARGE_DEPT AS (
@@ -91,7 +91,7 @@ WHERE
             INVALID_DEPT
     )
     
-2.For each country, count the number of departments. Display only the country_name and department_count, in ascending order of the country_name. Include the countries having no departments, too.
+-- 2.For each country, count the number of departments. Display only the country_name and department_count, in ascending order of the country_name. Include the countries having no departments, too.
     
     SELECT
     C.COUNTRY_NAME,
@@ -150,9 +150,9 @@ ORDER BY
     D.DEPARTMENT_NAME ASC,
     E.EMPLOYEE_ID ASC
     
-4.Find the employee_id, first_name, and salary of employees in descending order of the salary and ascending order of the employee ID, who meet exactly one of the following two conditions:
-		a. They report to a manager whose salary is greater than 15000.
-		b. They work in a department located in 'Seattle'.
+-- 4.Find the employee_id, first_name, and salary of employees in descending order of the salary and ascending order of the employee ID, who meet exactly one of the following two conditions:
+--		a. They report to a manager whose salary is greater than 15000.
+--		b. They work in a department located in 'Seattle'.
     
     SELECT
     E.EMPLOYEE_ID,
@@ -176,7 +176,7 @@ ORDER BY
     E.SALARY DESC,
     E.EMPLOYEE_ID ASC
     
-5.Find employees (first and last name), their departments, and salary, for those who earn more than the average salary in their own department. Only consider departments where there is at least one employee earning less than the company average salary and at least one earning more than the company average salary. Use a CASE statement to categorize salary as 'High' (if above 10,000), 'Medium' (if between 5,000 and 10,000), or 'Low' (if below 5,000).
+-- 5.Find employees (first and last name), their departments, and salary, for those who earn more than the average salary in their own department. Only consider departments where there is at least one employee earning less than the company average salary and at least one earning more than the company average salary. Use a CASE statement to categorize salary as 'High' (if above 10,000), 'Medium' (if between 5,000 and 10,000), or 'Low' (if below 5,000).
 
 WITH
     COMPANY_AVG AS (
